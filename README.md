@@ -1,6 +1,7 @@
 # MoviesApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
+Please read the licence file before using this project
 
 ## Development server
 
