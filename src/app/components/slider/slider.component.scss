@@ -32,8 +32,30 @@
     }
     &-pane {
       position: absolute;
-      top: 200px;
-      left: 200px;
+      width: 45%;
+      top: 5rem;
+      left: 5rem;
+      .movie-name {
+        font-size: 2.8rem;
+      }
+      .meta {
+        font-size: 1.4rem;
+        .info {
+          color: #999;
+
+          > span {
+            &:not(:last-child):after {
+              content: '|';
+              margin-right: 9px;
+              margin-left: 9px;
+            }
+          }
+        }
+      }
+      .desc {
+        font-size: 1.2rem;
+        line-height: 1.6;
+      }
     }
   }
 }
