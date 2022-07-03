@@ -1,6 +1,6 @@
 <div class="slider">
   <ng-container *ngFor="let item of items; let i = index">
-    <div class="slide" *ngIf="i == 5" @slideFade>
+    <div class="slide" *ngIf="i == currentSlideIndex" @slideFade>
       <div class="slide-bg">
         <img class="slide-bg-img" [src]="'https://image.tmdb.org/t/p/original/' + item.backdrop_path" alt="" />
       </div>
