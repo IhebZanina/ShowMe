@@ -1,11 +1,11 @@
 {{ items | json }}
 <div class="slider">
-  <div class="slide">
+  <div class="slide" *ngFor="let item of items">
     <div class="slide-bg">
       <img class="slide-bg-img" src="https://image.tmdb.org/t/p/original/vpILbP9eOQEtdQgl4vgjZUNY07r.jpg" alt="" />
     </div>
     <div class="slide-pane">
-      <h2 class="movie-name">LightYear</h2>
+      <h2 class="movie-name">{{ item.title }}</h2>
       <div class="meta">
         <div class="info">
           <span class="rating">
