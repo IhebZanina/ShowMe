@@ -17,4 +17,12 @@ export class MoviesService {
       })
     );
   }
+
+  searchMovies(page: number) {
+    return this.http.get<MovieDto>(`${this.baseURL}/movie/popular?page=${page}&api_key=${this.apiKey}`).pipe(
+      switchMap((res) => {
+        return of(res.results);
+      })
+    );
+  }
 }
