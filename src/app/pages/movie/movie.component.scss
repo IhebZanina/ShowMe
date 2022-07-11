@@ -1,5 +1,32 @@
+@import '../../../style/colors';
 :host ::ng-deep {
   .p-tabview-nav {
     justify-content: center;
   }
+}
+
+.poster {
+  max-width: 100%;
+}
+
+.overview-paragraph {
+  line-height: 1.9rem;
+}
+
+.stat {
+  display: flex;
+  margin-bottom: 15px;
+  .label {
+    width: 150px;
+    font-weight: bold;
+  }
+  .value {
+    color: $primaryColor;
+  }
+}
+
+.fi {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
