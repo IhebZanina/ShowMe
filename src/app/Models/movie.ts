@@ -36,3 +36,13 @@ export interface Countries {
   iso_3166_1: string;
   name: string;
 }
+
+export interface MovieVideoDto {
+  id: number;
+  results: MovieVideo[];
+}
+
+export interface MovieVideo {
+  site: string;
+  key: string;
+}
