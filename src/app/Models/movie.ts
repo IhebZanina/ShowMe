@@ -48,3 +48,9 @@ export interface MovieVideo {
   published_at: string;
   name: string;
 }
+
+export interface MovieImages {
+  backdrops: {
+    file_path: string;
+  }[];
+}
