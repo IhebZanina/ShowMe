@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { first } from 'rxjs/operators';
 import { Movie, MovieCredits, MovieImages, MovieVideo } from '../../Models/movie';
 import { MoviesService } from '../../services/movies.service';
 import { IMAGES_SIZES } from '../../constants/images-sizes';
@@ -9,21 +10,20 @@ import { IMAGES_SIZES } from '../../constants/images-sizes';
   templateUrl: './movie.component.html',
   styleUrls: ['./movie.component.scss']
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent implements OnInit, OnDestroy {
   movie: Movie | null = null;
   imagesSizes = IMAGES_SIZES;
   movieVideos: MovieVideo[] = [];
   movieImages: MovieImages | null = null;
   movieCredits: MovieCredits | null = null;
 
-  flag: boolean = false;
-  hide: string = 'none';
-  show: string = 'block';
-
   constructor(private route: ActivatedRoute, private movieService: MoviesService) {}
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
 
   ngOnInit(): void {
-    this.route.params.subscribe(({ id }) => {
+    this.route.params.pipe(first()).subscribe(({ id }) => {
       this.getMovie(id);
       this.getMovieVideos(id);
       this.getMovieImages(id);
