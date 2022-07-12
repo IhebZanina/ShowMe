@@ -7,8 +7,10 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./video-embed.component.scss']
 })
 export class VideoEmbedComponent implements OnInit {
-  @Input() site: string = 'Youtube';
+  @Input() site: string = 'YouTube';
   @Input() key: string | null = null;
+  @Input() name: string | null = null;
+  @Input() published_at: string | null = null;
 
   constructor(private sanitizer: DomSanitizer) {}
 

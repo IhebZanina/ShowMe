@@ -70,7 +70,13 @@
       <div class="grid">
         <ng-container *ngFor="let movievideo of movieVideos">
           <div class="col-12 md:col-4 lg:col-4">
-            <app-video-embed [key]="movievideo.key" [site]="movievideo.site"> </app-video-embed>
+            <app-video-embed
+              [key]="movievideo.key"
+              [site]="movievideo.site"
+              [name]="movievideo.name"
+              [published_at]="movievideo.published_at | date: 'MM/dd/YYYY'"
+            >
+            </app-video-embed>
           </div>
         </ng-container>
       </div>

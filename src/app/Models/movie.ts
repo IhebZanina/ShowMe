@@ -45,4 +45,6 @@ export interface MovieVideoDto {
 export interface MovieVideo {
   site: string;
   key: string;
+  published_at: string;
+  name: string;
 }
