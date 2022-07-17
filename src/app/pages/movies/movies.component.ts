@@ -24,8 +24,8 @@ export class MoviesComponent implements OnInit {
       }
     });
   }
-  getpagedMovie(pageNumber: number) {
-    this.movieService.searchMovies(pageNumber).subscribe((movies) => {
+  getpagedMovie(pageNumber: number, searchKeyWord?: string) {
+    this.movieService.searchMovies(pageNumber, searchKeyWord).subscribe((movies) => {
       this.movies = movies;
     });
   }
@@ -40,9 +40,17 @@ export class MoviesComponent implements OnInit {
     if (this.genreId) {
       this.getMovieByGenre(this.genreId, pageNumber);
     } else {
-      this.getpagedMovie(pageNumber);
+      if (this.searchValue) {
+        this.getpagedMovie(pageNumber, this.searchValue);
+      } else {
+        this.getpagedMovie(pageNumber);
+      }
     }
   }
 
-  searchChanged() {}
+  searchChanged() {
+    if (this.searchValue) {
+      this.getpagedMovie(1, this.searchValue);
+    }
+  }
 }
