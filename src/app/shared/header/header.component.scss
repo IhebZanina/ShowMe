@@ -1,5 +1,6 @@
 @import '../../../style/colors';
-
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;700&family=Edu+VIC+WA+NT+Beginner:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 header {
   .navbar {
     display: flex;
@@ -12,9 +13,15 @@ header {
     border-bottom: 1px solid rgb(255, 255, 255, 0.1);
 
     &-logo {
-      display: block;
+      h1 {
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+      }
+      display: flex;
+      justify-content: center;
       img {
-        width: 60px;
+        width: 100%;
+        height: 45px;
+        margin: 10px;
       }
     }
 
@@ -26,6 +33,9 @@ header {
       li {
         display: inline;
         margin-right: 15px;
+        font-family: 'Cormorant SC', serif;
+        font-weight: bolder;
+        font-size: 1.1rem;
       }
     }
   }
